@@ -1,5 +1,6 @@
 module Modifier
-  ( modifyAttribute,
+  ( Modifier,
+    modifyAttribute,
     modifyStats,
   ) where
 
