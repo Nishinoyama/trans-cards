@@ -1,13 +1,16 @@
-module Modifier(
-  giveAttribute,
-  addStats
+module Modifier
+  ( modifyAttribute,
+    modifyStats,
   ) where
 
 import Card
+import BasisStats
 import Attribute
 
-giveAttribute :: Attribute -> Card -> Card
-giveAttribute a c = BasisCard { stats = stats c, attributes = a : attributes c }
+type Modifier = Card -> Card
 
-addStats :: (CardStats ->  CardStats) -> Card -> Card
-addStats s c = BasisCard { stats = s $ stats c, attributes = attributes c }
+modifyAttribute :: (Attributes -> Attributes) -> Modifier
+modifyAttribute f c = c { attributes = f $ attributes c }
+
+modifyStats :: (BasisStats ->  BasisStats) -> Modifier
+modifyStats s c = c { stats = s $ stats c }

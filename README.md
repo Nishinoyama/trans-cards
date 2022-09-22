@@ -10,7 +10,7 @@ Make your cards modified as you like,
 and generate an entity with a perfect generator.
 Generated entities can be transformed as many times as you want.
 
-## So what is transformaion?
+## So what is transformation?
 
 ```hs
 modifier :: Card -> Card
